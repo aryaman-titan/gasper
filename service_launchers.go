@@ -9,6 +9,7 @@ import (
 	"github.com/sdslabs/gasper/services/enrai"
 	"github.com/sdslabs/gasper/services/hikari"
 	"github.com/sdslabs/gasper/services/iwa"
+	"github.com/sdslabs/gasper/services/jikan"
 	"github.com/sdslabs/gasper/services/kaen"
 	"github.com/sdslabs/gasper/services/kaze"
 	"github.com/sdslabs/gasper/services/mizu"
@@ -49,6 +50,10 @@ var launcherBindings = map[string]*serviceLauncher{
 	kaen.ServiceName: {
 		Deploy: configs.ServiceConfig.Kaen.Deploy,
 		Start:  startKaenService,
+	},
+	jikan.ServiceName: {
+		Deploy: configs.ServiceConfig.Jikan.Deploy,
+		Start:  startJikanService,
 	},
 }
 
@@ -109,4 +114,8 @@ func startEnraiServiceWithSSL() error {
 		os.Exit(1)
 	}
 	return nil
+}
+
+func startJikanService() error {
+	return jikan.NewService().ListenAndServe()
 }
