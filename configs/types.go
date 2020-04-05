@@ -101,6 +101,11 @@ type KaenService struct {
 	MongoDB DatabaseService `toml:"mongodb"`
 }
 
+// JikanService is the configuration for Jikan microservice
+type JikanService struct {
+	GenericService
+}
+
 // Images is the configuration for the docker images in use
 type Images struct {
 	Static  string `toml:"static"`
@@ -123,6 +128,7 @@ type Services struct {
 	Enrai            EnraiService  `toml:"enrai"`
 	Hikari           HikariService `toml:"hikari"`
 	Kaen             KaenService   `toml:"kaen"`
+	Jikan            JikanService  `toml:"jikan"`
 }
 
 // GasperCfg is the configuration for the entire project

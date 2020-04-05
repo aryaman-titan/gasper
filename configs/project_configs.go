@@ -58,6 +58,10 @@ var (
 			Deploy: ServiceConfig.Hikari.Deploy,
 			Port:   ServiceConfig.Hikari.Port,
 		},
+		types.Jikan: {
+			Deploy: ServiceConfig.Jikan.Deploy,
+			Port:   ServiceConfig.Jikan.Port,
+		},
 		types.MySQL: {
 			Deploy: ServiceConfig.Kaen.MySQL.PlugIn && ServiceConfig.Kaen.Deploy,
 			Port:   ServiceConfig.Kaen.Port,
